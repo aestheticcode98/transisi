@@ -64,6 +64,9 @@ class PageRegister extends GetView<ControllerRegister>{
                           TextFormField(
                             controller: controller.edtEmail,
                             keyboardType: TextInputType.emailAddress,
+                            style: const TextStyle(
+                              color: Colors.white
+                            ),
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
@@ -91,6 +94,9 @@ class PageRegister extends GetView<ControllerRegister>{
                           const SizedBox(height: 10),
                           TextFormField(
                             obscureText: true,
+                            style: const TextStyle(
+                                color: Colors.white
+                            ),
                             controller: controller.edtPassword,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(

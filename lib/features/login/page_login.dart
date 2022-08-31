@@ -63,6 +63,9 @@ class PageLogin extends GetView<ControllerLogin>{
                         children: <Widget>[
                           TextFormField(
                             controller: controller.edtEmail,
+                            style: const TextStyle(
+                                color: Colors.white
+                            ),
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
@@ -91,6 +94,9 @@ class PageLogin extends GetView<ControllerLogin>{
                           const SizedBox(height: 10),
                           TextFormField(
                             obscureText: true,
+                            style: const TextStyle(
+                                color: Colors.white
+                            ),
                             controller: controller.edtPassword,
                             keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
