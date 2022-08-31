@@ -1,8 +1,9 @@
 import 'dart:developer';
-
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:transisi/api/api2.dart';
 import 'package:transisi/features/login/api_login.dart';
+import 'package:transisi/pages/app_routes.dart';
 
 class ControllerLogin extends GetxController{
   final ApiLogin api;
@@ -11,6 +12,7 @@ class ControllerLogin extends GetxController{
   var edtEmail = TextEditingController();
   var edtPassword = TextEditingController();
 
+  var loading = false.obs;
   final formkeyLogin = GlobalKey<FormState>();
 
   @override
@@ -27,10 +29,26 @@ class ControllerLogin extends GetxController{
 
   validator()async{
     if(formkeyLogin.currentState!.validate()){
-      log("login success");
+      login();
     }else{
       log('login failed');
     }
   }
 
+  login()async{
+    try{
+      loading(true);
+      var loginResult = await api.login(email: edtEmail.text, password: edtPassword.text);
+      if(loginResult["token"] != null){
+        var token = loginResult["token"];
+        await Api2().setToken(token: token);
+        await Api2().setIsLogin(isLogin: true);
+        await Api2().setEmail(email: edtEmail.text);
+        await Api2().setPassword(password: edtPassword.text);
+        Get.offNamed(Routes.login);
+      }
+    }catch(e){
+      log(e.toString());
+    }
+  }
 }

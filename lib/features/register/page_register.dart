@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:transisi/features/login/controller_login.dart';
+import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:transisi/pages/app_routes.dart';
+import 'package:transisi/features/register/controller_register.dart';
 
-class PageLogin extends GetView<ControllerLogin>{
-  const PageLogin({Key? key}) : super(key: key);
+class PageRegister extends GetView<ControllerRegister>{
+  const PageRegister({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class PageLogin extends GetView<ControllerLogin>{
                   alignment: Alignment.center,
                   margin: const EdgeInsets.fromLTRB(30, 100, 30, 5),
                   child: Text(
-                    'Sign In',
+                    'Sign Up',
                     style: GoogleFonts.robotoCondensed(
                         textStyle: TextStyle(
                             fontSize: 45,
@@ -42,7 +42,7 @@ class PageLogin extends GetView<ControllerLogin>{
                   alignment: Alignment.center,
                   margin: const EdgeInsets.fromLTRB(30, 5, 30, 0),
                   child: Text(
-                    'Transisi for every digital problem',
+                    'Transisi come & join us',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.robotoCondensed(
                         textStyle: TextStyle(
@@ -58,7 +58,7 @@ class PageLogin extends GetView<ControllerLogin>{
                 child: Container(
                   margin: const EdgeInsets.fromLTRB(30, 30, 30, 0),
                   child: Form(
-                    key: controller.formkeyLogin,
+                      key: controller.formkeyRegister,
                       child: Column(
                         children: <Widget>[
                           TextFormField(
@@ -72,22 +72,22 @@ class PageLogin extends GetView<ControllerLogin>{
                                   Icons.person_outline_rounded,
                                   color: Colors.white),
                               enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                              borderSide: const BorderSide(color: Colors.white)),
+                                  borderRadius: BorderRadius.circular(15),
+                                  borderSide: const BorderSide(color: Colors.white)),
                               focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15),
                                   borderSide: const BorderSide(color: Colors.white)),
-                          labelStyle: const TextStyle(color: Colors.white),
-                          labelText: 'Email',
-                        ),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Email is wrong';
-                          }else{
-                            return null;
-                          }
-                        },
-                      ),
+                              labelStyle: const TextStyle(color: Colors.white),
+                              labelText: 'Email',
+                            ),
+                            validator: (value) {
+                              if (value!.isEmpty) {
+                                return 'Email is wrong';
+                              }else{
+                                return null;
+                              }
+                            },
+                          ),
                           const SizedBox(height: 10),
                           TextFormField(
                             obscureText: true,
@@ -136,7 +136,7 @@ class PageLogin extends GetView<ControllerLogin>{
                         elevation: 0
                     ),
                     child: Text(
-                      'Sign In',
+                      'Sign Up',
                       style: GoogleFonts.robotoCondensed(
                           textStyle: const TextStyle(
                               fontWeight: FontWeight.w400,
@@ -152,9 +152,9 @@ class PageLogin extends GetView<ControllerLogin>{
                   alignment: Alignment.center,
                   margin: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                   child: TextButton(
-                      onPressed: ()=> Get.toNamed(Routes.register),
+                      onPressed: ()=> Get.back(),
                       child: Text(
-                        'Register',
+                        'Log in',
                         textAlign: TextAlign.center,
                         style: GoogleFonts.robotoCondensed(
                             textStyle: const TextStyle(

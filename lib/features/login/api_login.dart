@@ -1,1 +1,12 @@
-class ApiLogin{}
+import 'package:transisi/api/api1.dart';
+
+class ApiLogin{
+  Future<dynamic> login({required String email, required String password})async{
+    final input ={
+      "email" : email,
+      "password" : password
+    };
+    var r = await Api1().apiJSONPost('api/login', input);
+    return r;
+  }
+}
