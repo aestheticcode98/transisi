@@ -45,9 +45,11 @@ class ControllerLogin extends GetxController{
         await Api2().setIsLogin(isLogin: true);
         await Api2().setEmail(email: edtEmail.text);
         await Api2().setPassword(password: edtPassword.text);
-        Get.offNamed(Routes.login);
+        Get.offNamed(Routes.create);
       }
+      loading(false);
     }catch(e){
+      loading(false);
       log(e.toString());
     }
   }

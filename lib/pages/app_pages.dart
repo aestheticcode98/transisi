@@ -1,4 +1,8 @@
 import 'package:get/get.dart';
+import 'package:transisi/features/create/binding_create.dart';
+import 'package:transisi/features/create/page_create.dart';
+import 'package:transisi/features/list_user/binding_listuser.dart';
+import 'package:transisi/features/list_user/page_listuser.dart';
 import 'package:transisi/features/login/page_login.dart';
 import 'package:transisi/features/register/binding_register.dart';
 import 'package:transisi/features/register/page_register.dart';
@@ -23,6 +27,16 @@ class AppPages{
         name: Routes.register,
         page: ()=> const PageRegister(),
         binding: BindingRegister()
+    ),
+    GetPage(
+        name: Routes.create,
+        page: ()=> const PageCreate(),
+        binding: BindingCreate()
+    ),
+    GetPage(
+        name: Routes.list_user,
+        page: ()=> const PageListuser(),
+        binding: BindingListuser()
     ),
   ];
 }
