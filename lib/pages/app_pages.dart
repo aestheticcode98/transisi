@@ -6,6 +6,8 @@ import 'package:transisi/features/list_user/page_listuser.dart';
 import 'package:transisi/features/login/page_login.dart';
 import 'package:transisi/features/register/binding_register.dart';
 import 'package:transisi/features/register/page_register.dart';
+import 'package:transisi/features/single_user/binding_singleuser.dart';
+import 'package:transisi/features/single_user/page_singleuser.dart';
 import 'package:transisi/pages/app_routes.dart';
 import '../features/login/binding_login.dart';
 import '../features/splashscreen/binding_splash.dart';
@@ -37,6 +39,11 @@ class AppPages{
         name: Routes.list_user,
         page: ()=> const PageListuser(),
         binding: BindingListuser()
+    ),
+    GetPage(
+        name: Routes.single_user,
+        page: ()=> const PageSingleuser(),
+        binding: BindingSingleuser()
     ),
   ];
 }
