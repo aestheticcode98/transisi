@@ -58,18 +58,17 @@ class PageCreate extends GetView<ControllerCreate>{
             ),
           ),
           Container(
-            margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            margin: const EdgeInsets.fromLTRB(20, 20, 20, 60),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 ElevatedButton(
                     onPressed: ()=> controller.create(),
                     style: ElevatedButton.styleFrom(
-                      side: const BorderSide(color: Colors.blueGrey, width: 1),
+                      side: const BorderSide(color: Colors.blueGrey, width: 1), backgroundColor: Colors.blueGrey,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
-                      primary: Colors.blueGrey,
                       fixedSize: Size(Get.width * 0.592, 45),
                       elevation: 0,
                     ),
@@ -79,12 +78,10 @@ class PageCreate extends GetView<ControllerCreate>{
                 ElevatedButton(
                     onPressed: ()=> Get.toNamed(Routes.list_user),
                     style: ElevatedButton.styleFrom(
-                      side: const BorderSide(color: Colors.blueGrey, width: 1),
+                      foregroundColor: Colors.blueGrey, backgroundColor: Colors.transparent, side: const BorderSide(color: Colors.blueGrey, width: 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)
                       ),
-                      primary: Colors.transparent,
-                      onPrimary: Colors.blueGrey,
                       fixedSize: const Size(110, 45),
                       elevation: 0,
                     ),
@@ -92,7 +89,22 @@ class PageCreate extends GetView<ControllerCreate>{
                 ),
               ],
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: ElevatedButton(
+                onPressed: ()=> Get.toNamed(Routes.experiment),
+                style: ElevatedButton.styleFrom(
+                  side: const BorderSide(color: Colors.blueGrey, width: 1), backgroundColor: Colors.blueGrey,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                  ),
+                  fixedSize: Size(Get.width, 45),
+                  elevation: 0,
+                ),
+                child: const Text('Experiment')
+            ),
+          ),
         ],
       ),
     );

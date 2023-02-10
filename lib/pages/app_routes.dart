@@ -5,4 +5,5 @@ abstract class Routes{
   static const create ='/create';
   static const list_user ='/list_user';
   static const single_user ='/single_user';
+  static const experiment ='/experiment';
 }
