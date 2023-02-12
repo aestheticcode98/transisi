@@ -69,12 +69,12 @@ class PageCreate extends GetView<ControllerCreate>{
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10)
                       ),
-                      fixedSize: Size(Get.width * 0.592, 45),
+                      fixedSize: Size(Get.width * 0.55, 45),
                       elevation: 0,
                     ),
                     child: const Text('Post user')
                 ),
-                const SizedBox(width: 10),
+                Spacer(),
                 ElevatedButton(
                     onPressed: ()=> Get.toNamed(Routes.list_user),
                     style: ElevatedButton.styleFrom(
@@ -82,7 +82,7 @@ class PageCreate extends GetView<ControllerCreate>{
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)
                       ),
-                      fixedSize: const Size(110, 45),
+                      fixedSize: Size(Get.width * .3, 45),
                       elevation: 0,
                     ),
                     child: const Text('See all user')
@@ -99,7 +99,7 @@ class PageCreate extends GetView<ControllerCreate>{
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)
                   ),
-                  fixedSize: Size(Get.width, 45),
+                  fixedSize: Size(Get.width * 0.3, 45),
                   elevation: 0,
                 ),
                 child: const Text('Experiment')

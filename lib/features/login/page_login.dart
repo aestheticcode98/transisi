@@ -18,6 +18,7 @@ class PageLogin extends GetView<ControllerLogin>{
             'assets/images/login_bg.png',
             fit: BoxFit.cover,
             height: Get.height,
+            width: Get.width,
           ),
           CustomScrollView(
             slivers: [
@@ -134,8 +135,7 @@ class PageLogin extends GetView<ControllerLogin>{
                   child: ElevatedButton(
                     onPressed: ()=> controller.validator(),
                     style: ElevatedButton.styleFrom(
-                        fixedSize: const Size(70, 50),
-                        primary: Colors.blueGrey,
+                        fixedSize: const Size(70, 50), backgroundColor: Colors.blueGrey,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10)
                         ),
